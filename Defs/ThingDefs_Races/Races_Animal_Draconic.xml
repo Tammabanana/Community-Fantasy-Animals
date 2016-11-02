@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase" Name="DraconicThingBase" Abstract="True">
+    <statBases>
+      <MoveSpeed>6</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <defaultCooldownTicks>100</defaultCooldownTicks>
+        <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
+        <meleeDamageDef>Cut</meleeDamageDef>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <defaultCooldownTicks>100</defaultCooldownTicks>
+        <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
+        <meleeDamageDef>Cut</meleeDamageDef>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <defaultCooldownTicks>100</defaultCooldownTicks>
+        <meleeDamageBaseAmount>20</meleeDamageBaseAmount>
+        <meleeDamageDef>Bite</meleeDamageDef>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+    </verbs>
+
+    <race>
+      <herdAnimal>false</herdAnimal>
+      <body>QuadrupedAnimalWithClawsTailAndJowl</body>
+      <predator>true</predator>
+      <baseBodySize>2.0</baseBodySize>
+      <baseHungerRate>0.25</baseHungerRate>
+      <baseHealthScale>2</baseHealthScale>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+      <gestationPeriodDays>30</gestationPeriodDays>
+      <wildness>0.95</wildness>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.025</manhunterOnTameFailChance>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <lifeExpectancy>75</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>5.0</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>10</minAge>
+          <soundWounded>Pawn_Iguana_Wounded</soundWounded>
+          <soundDeath>Pawn_Iguana_Death</soundDeath>
+          <soundCall>Pawn_Iguana_Call</soundCall>
+          <soundAngry>Pawn_Iguana_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+      <li>BadassAnimal</li>
+    </tradeTags>
+  </ThingDef>
+    <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="DraconicBase">
+    <combatPower>240</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.3</wildSpawn_EcoSystemWeight>
+  </PawnKindDef>
+
+
+  <!-- ==========================Green Wyvern============================ -->
+
+  <ThingDef ParentName="DraconicThingBase">
+    <defName>GreenWyvern</defName>
+    <label>green wyvern</label>
+    <description>A large, volatile draconic predator. Unlike true dragons, wyverns are capable of flight using their modified arms rather than distinct wing appendages.</description>
+    <race>
+      <leatherColor>(96,135,34)</leatherColor>
+      <leatherInsulation>1.0</leatherInsulation>
+      <wildness>0.95</wildness>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <leatherLabel>green wyvernhide</leatherLabel>
+      <meatLabel>dragon meat</meatLabel>
+      <wildBiomes>
+        <BorealForest>0.02</BorealForest>
+        <TemperateForest>0.03</TemperateForest>
+        <TropicalRainforest>0.04</TropicalRainforest>     
+      </wildBiomes>
+    </race>
+
+  </ThingDef>
+  <PawnKindDef ParentName="DraconicBase">
+    <defName>GreenWyvern</defName>
+    <label>green wyvern</label>
+    <race>GreenWyvern</race>
+    <lifeStages>
+      <li>
+        <label>Green Wyvern Hatchling</label>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/greenwyvern</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.4)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/greenwyvern</texPath>
+          <drawSize>2.25</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.45, 0.45)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.9</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/greenwyvern</texPath>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <!-- ========================Red Dragon============================== -->
+
+  <ThingDef ParentName="DraconicThingBase">
+    <defName>RedDragon</defName>
+    <label>red dragon</label>
+    <description>A warmblooded carnivore that keeps itself warm with an internal furnace and a voracious appetite. The red dragon has a third pair of appendages, wings dedicated to flight.</description>
+    <race>
+      <leatherColor>(192,79,29)</leatherColor>
+      <leatherInsulation>1.1</leatherInsulation>
+      <wildness>0.95</wildness>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <leatherLabel>red dragonhide</leatherLabel>
+      <useMeatFrom>GreenWyvern</useMeatFrom>
+      <wildBiomes>
+        <TemperateForest>0.02</TemperateForest>
+        <TropicalRainforest>0.01</TropicalRainforest>
+        <AridShrubland>0.02</AridShrubland>
+        <Desert>0.02</Desert>
+        <ExtremeDesert>0.02</ExtremeDesert>      
+      </wildBiomes>
+    </race>
+
+  </ThingDef>
+  <PawnKindDef ParentName="DraconicBase">
+    <defName>RedDragon</defName>
+    <label>red dragon</label>
+    <race>RedDragon</race>
+    <lifeStages>
+      <li>
+        <label>Red Dragon Hatchling</label>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/reddragon</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/reddragon</texPath>
+          <drawSize>4.25</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.45, 0.45)</volume>
+            <offset>(0,0,-0.4)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/reddragon</texPath>
+          <drawSize>5.5</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================Bone Dragon============================== -->
+
+  <!-- ========================Behir============================== -->
+
+  <!-- ========================Basilisk============================== -->
+
+  <!-- ========================Raptor Wyvern============================== -->
+
+  <!-- ========================Cuatl============================== -->
+
+  <!-- ========================Wyrm============================== -->
+
+  
+</Defs>
