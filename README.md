@@ -1,5 +1,5 @@
 # Community-Fantasy-Animals
-Organizing a hopefully-public project to give life to vanilla-style fantasy animalss.
+Organizing a hopefully-public project to give life to vanilla-style Rimworld fantasy animals.
 
 The plan is:
 
