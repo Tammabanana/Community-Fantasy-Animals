@@ -1,4 +1,4 @@
-# GreyFluffs-Fantasy-Animals
+# Community-Fantasy-Animals
 Organizing a hopefully-public project to give life to vanilla-style fantasy animalss.
 
 The plan is:
